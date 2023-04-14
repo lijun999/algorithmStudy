@@ -1,0 +1,45 @@
+# maven ignore
+target/
+bin/
+*.jar
+*.war
+*.zip
+*.tar
+*.tar.gz
+out/
+
+# eclipse ignore
+.settings/
+.project
+.classpath
+.metadata/
+
+# idea ignore
+.idea/
+*.ipr
+*.iml
+*.iws
+rebel.xml
+dynamic.log.*
+
+# temp ignore
+*.log
+*.cache
+*.diff
+*.patch
+*.tmp
+
+# system ignore
+.DS_Store
+Thumbs.db
+# Created by .ignore support plugin (hsz.mobi)
+### Example user template template
+### Example user template
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+*.class
+\target
