@@ -1,6 +1,4 @@
-package com.lijun.sort;
-
-import java.util.Random;
+package com.algorithm.sort;
 
 public class SortUtils {
     /**

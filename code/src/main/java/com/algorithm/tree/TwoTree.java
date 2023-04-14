@@ -1,4 +1,4 @@
-package com.lijun.tree;
+package com.algorithm.tree;
 
 public class TwoTree {
     private class Node {

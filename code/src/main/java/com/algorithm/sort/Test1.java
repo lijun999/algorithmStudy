@@ -1,4 +1,4 @@
-package com.lijun.sort;
+package com.algorithm.sort;
 
 import java.util.Scanner;
 

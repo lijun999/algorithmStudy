@@ -1,4 +1,4 @@
-package com.lijun.sort;
+package com.algorithm.sort;
 
 /**
  * 插入排序
