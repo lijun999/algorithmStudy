@@ -1,4 +1,4 @@
-package com.algorithm.sort;
+package com.algorithm.other;
 
 public class Test {
 
