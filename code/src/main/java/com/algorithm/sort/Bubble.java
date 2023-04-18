@@ -1,8 +1,6 @@
 package com.algorithm.sort;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.Arrays;
 
 /**
  * 冒泡排序
@@ -10,27 +8,20 @@ import java.util.Scanner;
  * arr[i-1]和arr[i]位置的数，比较大小，谁大谁排后面
  */
 public class Bubble {
-    //    public static void main(String[] args) {
-//        int times = 10000;
-//        int maxLength = 1000;
-//        int maxValue = 1000000;
-//        System.out.println("测试开始");
-//        for (int i = 0; i < times; i++) {
-//            int[] arr = SortUtils.getRandonArr(maxValue, maxLength);
-//            int[] arr1 = SortUtils.copyArr(arr);
-//            int[] arr2 = SortUtils.copyArr(arr);
-//            bubble(arr1);
-//            Arrays.sort(arr2);
-//            SortUtils.checkArr(arr,arr1,arr2);
-//        }
-//        System.out.println("测试结束");
-//    }
-    public static void main(String args[]) {
-        Scanner sc = new Scanner(System.in);
-        List<String[]> list = new ArrayList();
-        while (sc.hasNext()) {
-//        sc.nextLine()
+        public static void main(String[] args) {
+        int times = 10000;
+        int maxLength = 1000;
+        int maxValue = 1000000;
+        System.out.println("测试开始");
+        for (int i = 0; i < times; i++) {
+            int[] arr = SortUtils.getRandonArr(maxValue, maxLength);
+            int[] arr1 = SortUtils.copyArr(arr);
+            int[] arr2 = SortUtils.copyArr(arr);
+            bubble(arr1);
+            Arrays.sort(arr2);
+            SortUtils.checkArr(arr,arr1,arr2);
         }
+        System.out.println("测试结束");
     }
 
     //冒泡排序，arr[i-1]和arr[i]位置的数，比较大小，谁大谁排后面
