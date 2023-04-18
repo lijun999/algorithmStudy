@@ -1,5 +1,7 @@
 package com.algorithm.sort;
 
+import java.util.Arrays;
+
 /**
  * 选择排序
  * 过程：
@@ -9,9 +11,19 @@ package com.algorithm.sort;
  */
 public class Select {
     public static void main(String[] args) {
-        int [] arr = {1,4,2,5,6,7,22,555,43,554,76,666,33,33,665};
-        select(arr);
-        SortUtils.printArr(arr);
+        int times = 10000;
+        int maxLength = 1000;
+        int maxValue = 1000000;
+        System.out.println("测试开始");
+        for (int i = 0; i < times; i++) {
+            int[] arr = SortUtils.getRandonArr(maxValue, maxLength);
+            int[] arr1 = SortUtils.copyArr(arr);
+            int[] arr2 = SortUtils.copyArr(arr);
+            select(arr1);
+            Arrays.sort(arr2);
+            SortUtils.checkArr(arr,arr1,arr2);
+        }
+        System.out.println("测试结束");
     }
 
     public static void select(int[] arr) {
