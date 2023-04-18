@@ -57,6 +57,7 @@ public class SortUtils {
             if(arr1[i]!=arr2[i]){
                 System.out.println("fuck!!!!!!!出错了");
                 printArr(arr);
+                break;
             }
         }
     }
