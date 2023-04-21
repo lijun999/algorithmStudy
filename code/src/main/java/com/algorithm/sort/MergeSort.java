@@ -15,7 +15,7 @@ public class MergeSort {
             int[] arr = SortUtils.getRandonArr(maxValue, maxLength);
             int[] arr1 = SortUtils.copyArr(arr);
             int[] arr2 = SortUtils.copyArr(arr);
-            mergeSore1(arr1);
+            mergeSort1(arr1);
             Arrays.sort(arr2);
             SortUtils.checkArr(arr, arr1, arr2);
         }
@@ -26,7 +26,7 @@ public class MergeSort {
      * 递归版本实现
      * @param arr
      */
-    public static void mergeSore1(int[] arr){
+    public static void mergeSort1(int[] arr){
         process(arr, 0, arr.length - 1);
     }
 
