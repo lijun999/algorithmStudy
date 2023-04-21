@@ -15,12 +15,21 @@ public class MergeSort {
             int[] arr = SortUtils.getRandonArr(maxValue, maxLength);
             int[] arr1 = SortUtils.copyArr(arr);
             int[] arr2 = SortUtils.copyArr(arr);
-            mergeSort(arr1, 0, arr1.length - 1);
+            mergeSore1(arr1);
             Arrays.sort(arr2);
             SortUtils.checkArr(arr, arr1, arr2);
         }
         System.out.println("测试结束");
     }
+
+    /**
+     * 递归版本实现
+     * @param arr
+     */
+    public static void mergeSore1(int[] arr){
+        process(arr, 0, arr.length - 1);
+    }
+
 
     /**
      * 让数组在L--R 的范围上排序
@@ -29,18 +38,18 @@ public class MergeSort {
      * @param L
      * @param R
      */
-    public static void mergeSort(int[] arr, int L, int R) {
+    public static void process(int[] arr, int L, int R) {
         if (L >= R) {
             return;
         }
         int mid = L + ((R - L) >> 1);
-        mergeSort(arr, L, mid);
-        mergeSort(arr, mid + 1, R);
+        process(arr, L, mid);
+        process(arr, mid + 1, R);
         merge(arr, L, mid, R);
     }
 
     private static void merge(int[] arr, int L, int M, int R) {
-        int[] tmp = new int[arr.length];
+        int[] tmp = new int[arr.length];//空间优化，每次可以申请R-L+1的空间
         int index = L;
         int record = L;
         int rightStart = M + 1;
@@ -51,7 +60,7 @@ public class MergeSort {
                 tmp[index++] = arr[rightStart++];
             }
         }
-        if (L <= M) {
+        if (L <= M) {        //可以优化，直接去掉
             while (L <= M) {
                 tmp[index++] = arr[L++];
             }
