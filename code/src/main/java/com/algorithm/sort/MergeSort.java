@@ -8,14 +8,14 @@ import java.util.Arrays;
 public class MergeSort {
     public static void main(String[] args) {
         int times = 10000;
-        int maxLength = 1000;
-        int maxValue = 1000000;
+        int maxLength = 500;
+        int maxValue = 100000000;
         System.out.println("测试开始");
         for (int i = 0; i < times; i++) {
             int[] arr = SortUtils.getRandonArr(maxValue, maxLength);
             int[] arr1 = SortUtils.copyArr(arr);
             int[] arr2 = SortUtils.copyArr(arr);
-            mergeSort1(arr1);
+            mergeSort2(arr1);
             Arrays.sort(arr2);
             SortUtils.checkArr(arr, arr1, arr2);
         }
@@ -24,9 +24,13 @@ public class MergeSort {
 
     /**
      * 递归版本实现
+     *
      * @param arr
      */
-    public static void mergeSort1(int[] arr){
+    public static void mergeSort1(int[] arr) {
+        if (arr == null || arr.length < 2) {
+            return;
+        }
         process(arr, 0, arr.length - 1);
     }
 
@@ -74,5 +78,32 @@ public class MergeSort {
             arr[i] = tmp[i];
         }
     }
+
+
+    /**
+     * 归并排序非递归版本
+     *
+     * @param arr
+     */
+    public static void mergeSort2(int[] arr) {
+        if (arr == null || arr.length < 2) {
+            return;
+        }
+        int step = 1;//步长
+        int lstart = 0;//第一个左组的开始位置
+        int rstart = lstart + step;//第一个右组开始的位置
+        while (step < arr.length) {
+            while (lstart < arr.length && rstart< arr.length) {
+                int rend = Math.min(rstart + step - 1, arr.length - 1);
+                merge(arr, lstart, rstart - 1, rend);
+                lstart = rend + 1;
+                rstart = lstart + step;
+            }
+            step = step << 1;
+            lstart = 0;
+            rstart = lstart + step;
+        }
+    }
+
 
 }
